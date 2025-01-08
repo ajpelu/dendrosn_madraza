@@ -180,7 +180,7 @@ shape_sp <- c(
 library(ggnewscale)
 library(ggspatial)
 
-ggplot() +
+map <- ggplot() +
   geom_sf(data = eco, aes(fill = eco_type), color = NA) +
   scale_fill_manual(values = color_eco, name = "Ecosistemas") +
   geom_spatraster(
@@ -206,6 +206,9 @@ ggplot() +
   ylab("Latitude")
 
 
+# Save plot
+ggsave("output/sn_map.png",
+       plot = map, width = 32, height = 15, dpi = 300, units = "cm")
 
 
 
